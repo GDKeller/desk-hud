@@ -40,7 +40,7 @@ function renderData() {
         case (dataTemp >= 90):
             elTemp.classList.add('hot');
             break;
-        case (dataTemp < 90 && dataTemp > 70):
+        case (dataTemp < 90 && dataTemp > 80):
             elTemp.classList.add('warm');
             break;
         case (dataTemp < 50):
