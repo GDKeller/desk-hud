@@ -36,5 +36,16 @@ function renderData() {
     var elLocation = document.querySelector('.location');
     elDesc.innerHTML = dataDesc;
     elTemp.innerHTML = dataTemp;
+    switch(true) {
+        case (dataTemp >= 90):
+            elTemp.classList.add('hot');
+            break;
+        case (dataTemp < 90 && dataTemp > 70):
+            elTemp.classList.add('warm');
+            break;
+        case (dataTemp < 50):
+            elTemp.classList.add('cold');
+            break;
+    }
     elLocation.innerHTML = dataLocation;
 }

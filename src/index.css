@@ -41,6 +41,15 @@ body {
 .weather h1 {
     font-size: 2.5em;
 }
+.weather .hot {
+    color: red;
+}
+.weather .warm {
+    color: orange;
+}
+.weather .cold {
+    color: deepskyblue;
+}
 .weather .description {
     margin-left: 20px;
 }
