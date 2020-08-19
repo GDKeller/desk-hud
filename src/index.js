@@ -13,7 +13,10 @@ const createWindow = () => {
     height: 600,
     frame: true,
     fullscreen: true,
-    kiosk: true
+    kiosk: true,
+    webPreferences: {
+      nodeIntegration: true
+    }
   });
 
   // and load the index.html of the app.
