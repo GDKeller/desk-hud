@@ -89,4 +89,6 @@ typings/
 out/
 
 # PhpStorm
+.idea
 .idea/
+.idea/*

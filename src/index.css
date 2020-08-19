@@ -1,19 +1,55 @@
 body {
     background: black;
+    color: white;
+    font-family :Aldrich, sans-serif;
+    overflow: hidden;
 }
-
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+.app h1, .app h2, .app h3 {
+    margin-top: unset;
+    margin-bottom: unset;
+}
 .clock {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
     color: #17D4FE;
     font-size: 60px;
     font-family: Orbitron;
     letter-spacing: 7px;
     width: 100%;
     text-align: center;
-   
-
-
+    margin-bottom: 40px;
+}
+.weather {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.weather .row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.weather h1 {
+    font-size: 2.5em;
+}
+.weather .hot {
+    color: red;
+}
+.weather .warm {
+    color: orange;
+}
+.weather .cold {
+    color: deepskyblue;
+}
+.weather .description {
+    margin-left: 20px;
 }
