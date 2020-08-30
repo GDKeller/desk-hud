@@ -10,7 +10,7 @@ var dataLocation = '';
 fetchData()
 window.setInterval(function() {
     fetchData()
-}, 5000);
+}, 60000);
 
 
 
