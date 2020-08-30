@@ -1,3 +1,5 @@
+const dev = false;
+
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
 
@@ -6,9 +8,8 @@ if (require('electron-squirrel-startup')) { // eslint-disable-line global-requir
   app.quit();
 }
 
-const createWindow = () => {
-  // Create the browser window.
-  const mainWindow = new BrowserWindow({
+if( dev === true ) {
+  windowArgs = {
     width: 480,
     height: 320,
     frame: true,
@@ -18,13 +19,34 @@ const createWindow = () => {
     webPreferences: {
       nodeIntegration: true
     }
-  });
+  }
+}
+else {
+  windowArgs = {
+    width: 480,
+    height: 320,
+    frame: false,
+    fullscreen: true,
+    fullscreenable: true,
+    // kiosk: true,
+    webPreferences: {
+      nodeIntegration: true
+    }
+  }
+}
+
+
+const createWindow = () => {
+  // Create the browser window.
+  const mainWindow = new BrowserWindow(windowArgs);
 
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
-  // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  if( dev === true ) {
+    // Open the DevTools.
+    mainWindow.webContents.openDevTools();
+  }
 };
 
 // This method will be called when Electron has finished
