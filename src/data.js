@@ -31,21 +31,23 @@ function fetchData() {
 }
 
 function renderData() {
-    var elTemp = document.querySelector('.temp');
+    var elTemp = document.getElementById('temp');
     var elDesc = document.querySelector('.description');
     var elLocation = document.querySelector('.location');
     elDesc.innerHTML = dataDesc;
     elTemp.innerHTML = dataTemp;
     switch(true) {
         case (dataTemp >= 90):
-            elTemp.classList.add('hot');
+            elTemp.className = 'hot';
             break;
         case (dataTemp < 90 && dataTemp > 80):
-            elTemp.classList.add('warm');
+            elTemp.className = 'warm';
             break;
         case (dataTemp < 50):
-            elTemp.classList.add('cold');
+            elTemp.className = 'cold';
             break;
+        default:
+                elTemp.className= 'nominal';
     }
     elLocation.innerHTML = dataLocation;
 }
